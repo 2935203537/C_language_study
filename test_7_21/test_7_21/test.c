@@ -77,18 +77,27 @@
 //}
 
 
-int main()
+//int main()
+//{
+//	int no;
+//	printf("请输入一个整数:");
+//	scanf("%d", &no);
+//	printf("最后一位是%d。\n", no % 10);
+//	int na, nb;
+//	puts("请输入两个整数。");
+//	printf("整数A:");
+//	scanf("%d", &na);
+//	printf("整数B:");
+//	scanf("%d", &nb);
+//	printf("A除以B得%d余%d。\n", na / nb, na % nb);
+//	return 0;
+//}
+
+int main(void)
 {
-	int no;
-	printf("请输入一个整数:");
-	scanf("%d", &no);
-	printf("最后一位是%d。\n", no % 10);
-	int na, nb;
-	puts("请输入两个整数。");
-	printf("整数A:");
-	scanf("%d", &na);
-	printf("整数B:");
-	scanf("%d", &nb);
-	printf("A除以B得%d余%d。\n", na / nb, na % nb);
+	double vx;
+	printf("请输入一个实数:");
+	scanf("%lf", &vx);
+	printf("你输入的是%f\n", vx);
 	return 0;
 }
