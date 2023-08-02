@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <math.h>
-
+#include <string.h>
 //int main()
 //{
 //	int flag = 5;
@@ -287,15 +287,67 @@
 //	return 0;
 //}
 
+//int main()
+//{
+//	int iq = 0;
+//	while (scanf("%d", &iq) == 1)
+//	{
+//		if (iq >= 140)
+//		{
+//			printf("Genius\n");
+//		}
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	int ret = strcmp("abc", "aef");
+//	printf("%d\n", ret);
+//	return 0;
+//}
+
+//int main()
+//{
+//	for (int i = 1; i < 101; i++)
+//	{
+//		if (i % 3 == 0)
+//		{
+//			printf("%d ", i);
+//		}
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	int a, b, c;
+//	scanf("%d %d %d", &a, &b, &c);
+//	if (a < b)
+//	{
+//		int tmp = a;
+//		a = b;
+//		b = tmp;
+//
+//	}
+//	if (a < c)
+//	{
+//		int tmp = a;
+//		a = c;
+//		c = tmp;
+//	}
+//	if (b < c)
+//	{
+//		int tmp = b;
+//		b = c;
+//		c = tmp;
+//	}
+//	printf("%d,%d,%d\n", a, b, c);
+//	return 0;
+//}
+
+
 int main()
 {
-	int iq = 0;
-	while (scanf("%d", &iq) == 1)
-	{
-		if (iq >= 140)
-		{
-			printf("Genius\n");
-		}
-	}
 	return 0;
 }
