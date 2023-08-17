@@ -1,6 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-
+#define NUMBER 5
 
 //题目一 判断三角形
 int main1() {
@@ -296,14 +296,138 @@ void Reverse(int arr[], int len)
     }
 }
 
+//int main()
+//{
+//    int arr[10] = { 0 };
+//    int len = sizeof(arr) / sizeof(arr[0]);
+//    Init(arr, len);
+//    Print(arr, len);
+//
+//    Reverse(arr, len);
+//    Print(arr, len);
+//    return 0;
+//}
+
+//int main()
+//{
+//    int i;
+//    int tensu[NUMBER];
+//    int sum = 0;
+//
+//    puts("请输入学生的分数");
+//    for (i = 0; i < NUMBER; i++)
+//    {
+//        printf("%2d号 :", i + 1);
+//        scanf("%d", &tensu[i]);
+//        sum += tensu[i];
+//    }
+//    printf("总分:%5d\n", sum);
+//    printf("平均分:%5.1f\n", (double)sum / NUMBER);
+//    return 0;
+//}
+
+//int main()
+//{
+//    int i;
+//    int tensu[NUMBER];
+//    int max, min;
+//
+//    puts("请输入学生的分数。");
+//    for (i = 0; i < NUMBER; i++)
+//    {
+//        printf("%2d 号 :", i + 1);
+//        scanf("%d", &tensu[i]);
+//    }
+//    min = max = tensu[0];
+//    for (i = 1; i < NUMBER; i++)
+//    {
+//        if (tensu[i] > max)
+//        {
+//            max = tensu[i];
+//        }
+//        if (tensu[i] < min);
+//        {
+//            min = tensu[i];
+//        }
+//    }
+//    printf("最高分 :%d\n", max);
+//    printf("最低分 :%d\n", min);
+//    return 0;
+//}
+
+//及格学生一览表
+//int main()
+//{
+//    int i;
+//    int snum = 0;
+//    int tensu[NUMBER];
+//    int succs[NUMBER];
+//    puts("请输入学生的分数。");
+//    for (i = 0; i < NUMBER; i++)
+//    {
+//        printf("%2d号 :", i + 1);
+//        scanf("%d", &tensu[i]);
+//        if (tensu[i] >= 60)
+//        {
+//            succs[snum++] = i;
+//        }
+//    }
+//    puts("及格学生一览表");
+//    puts("------------");
+//    for (i = 0; i < snum; i++)
+//    {
+//        printf("%2d号(%3d分)\n", succs[i] + 1, tensu[succs[i]]);
+//
+//    }
+//    return 0;
+//}
+
+//成绩分布图
+
 int main()
 {
-    int arr[10] = { 0 };
-    int len = sizeof(arr) / sizeof(arr[0]);
-    Init(arr, len);
-    Print(arr, len);
+    int i, j;
+    int num;
+    int tensu[NUMBER];
+    int bunpu[11] = { 0 };
+    
+    printf("请输入学生人数:");
+    do {
+        scanf("%d", &num);
+        if (num < 1 || num > NUMBER)
+        {
+            printf("\a人数范围[1到%d]:", NUMBER);
+        }
+    } while (num < 1 || num > NUMBER);
 
-    Reverse(arr, len);
-    Print(arr, len);
+    puts("请输入学生的分数。");
+    for (i = 0; i < num; i++)
+    {
+        printf("%2d号", i + 1);
+        do {
+            scanf("%d", &tensu[i]);
+            if (tensu[i] < 0 || tensu[i] > 100)
+            {
+                printf("\a分数范围[0到100]:");
+            }
+        } while (tensu[i] < 0 || tensu[i] > 100);
+        bunpu[tensu[i] / 10]++;
+    }
+    puts("\n □ 分布图 □");
+    printf("        100");
+    for (j = 0; j < bunpu[10]; j++)
+    {
+        putchar('*');
+    }
+    putchar('\n');
+    for (i = 9; i >= 0; i--)
+    {
+        printf("%3d - %3d:", i * 10, i * 10 + 9);
+        for (j = 0; j < bunpu[i]; j++)
+        {
+            putchar('*');
+        }
+        putchar('\n');
+    }
     return 0;
 }
